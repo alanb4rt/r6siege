@@ -1,5 +1,6 @@
 import Poste from "./assets/components/Poste"
 import Rank from "./assets/components/Rank"
+import Unite from "./assets/components/Unite"
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
       <main className="p-8 min-w-96">
         <Rank />
         <Poste />
+        <Unite />
       </main>
     </>
   )
