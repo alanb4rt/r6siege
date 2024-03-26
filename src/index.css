@@ -57,3 +57,15 @@ h1 {
 #unite .button {
   @apply border p-2
 }
+
+.card {
+  .bio > li {
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+  }
+  
+  .bio > li:last-child {
+    border-bottom: none;
+  }
+}
