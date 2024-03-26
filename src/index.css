@@ -48,3 +48,7 @@ h1 {
 #grade img {
   width: 100px;
 }
+
+#poste .button-poste {
+  @apply flex flex-col gap-2 p-4 border rounded aspect-square w-32;
+}
