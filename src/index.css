@@ -69,3 +69,29 @@ h1 {
     border-bottom: none;
   }
 }
+
+#modal {
+  @apply z-10 fixed inset-0 flex;
+  background-color: hsla(0, 0%, 50%, 0.2);
+  backdrop-filter: blur(1px);
+}
+
+.ctn-modal {
+  @apply relative rounded-xl w-4/5 max-w-xl m-auto;
+  background-color: hsla(0, 0%, 10%, 1);
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ctn-modal li {
+  border-bottom: 1px solid white;
+}
+
+.ctn-modal li:last-child {
+  border-bottom: none;
+}
+
+.ctn-modal span {
+  @apply text-lg;
+}

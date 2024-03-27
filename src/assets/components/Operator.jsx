@@ -1,12 +1,12 @@
 import {operators} from '../utils/r6s_data'
 
-export default function Operator() {
+export default function Operator(props) {
 
     const path = "./src/assets/images/";
 
     return (
         operators.map(op => (
-            <div key={op.id} className="card flex flex-col">
+            <div key={op.id} onClick={() => props.onClick(op.id)} className="card flex flex-col cursor-pointer">
                 <section className='flex flex-col items-center text-center rounded overflow-hidden'>
                     <div className='relative flex flex-col items-center'>
                         <img src={path+"operators/"+op.img} alt={op.agent} />
