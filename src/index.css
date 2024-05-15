@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -58,16 +59,14 @@ h1 {
   @apply border p-2
 }
 
-.card {
-  .bio > li {
-    color: white;
+.card .bio > li {
+  color: white;
     border-bottom: 1px solid white;
     padding: 10px;
-  }
-  
-  .bio > li:last-child {
-    border-bottom: none;
-  }
+}
+
+.card .bio > li:last-child {
+  border-bottom: none;
 }
 
 #modal {
