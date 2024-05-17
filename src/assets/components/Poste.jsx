@@ -10,7 +10,7 @@ export const Button = (props) => {
   return (
     <li
       className={`button-poste ${
-        isActive && props.poste !== props.filter && "opacity-50"
+        isActive && props.poste !== props.filter ? "opacity-50" : ""
       }`}
       onClick={() => props.handleClick("poste", props.poste)}
     >
