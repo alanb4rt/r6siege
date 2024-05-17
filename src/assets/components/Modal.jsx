@@ -1,39 +1,39 @@
 import iconClose from "../images/icon-close.svg";
 
-export default function Modal({ operator, isModalActive, close }) {
+export default function Modal({ operatorData, isModalActive, close }) {
   const path = "./src/assets/images";
 
   return (
     <>
-      {isModalActive && operator && (
+      {isModalActive && operatorData && (
         <div id="modal">
           <section
             className="ctn-modal"
             style={{
-              backgroundImage: `url(${path}/bg-operators/bg-${operator.img})`,
+              backgroundImage: `url(${path}/bg-operators/bg-${operatorData.img})`,
             }}
           >
             <ul className="flex flex-col w-1/3 gap-2 p-4 text-sm">
               <img
                 className="w-24 m-auto"
-                src={`${path}/badges/${operator.badge}`}
+                src={`${path}/badges/${operatorData.badge}`}
                 alt="Badge"
               />
               <li>
                 Agent :<br />
-                <span>{operator.agent}</span>
+                <span>{operatorData.agent}</span>
               </li>
               <li>
                 Prénom :<br />
-                <span>{operator.prenom}</span>
+                <span>{operatorData.prenom}</span>
               </li>
               <li>
                 Nom :<br />
-                <span>{operator.nom}</span>
+                <span>{operatorData.nom}</span>
               </li>
               <li>
                 Date de naissance :<br />
-                <span>{operator.naissance}</span>
+                <span>{operatorData.naissance}</span>
               </li>
             </ul>
             <img

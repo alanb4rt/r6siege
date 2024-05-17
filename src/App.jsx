@@ -7,48 +7,57 @@ import Modal from "./assets/components/Modal";
 import { operators } from "./assets/utils/r6s_data";
 
 export default function App() {
+  const initialFilter = {
+    poste: "",
+    unite: "",
+  };
+
   const [data, setData] = useState(operators);
   const [isModalActive, setIsModalActive] = useState(false);
-  const [operatorId, setOperatorId] = useState();
-  const [posteOperator, setPosteOperator] = useState("");
+  const [operatorDetails, setOperatorDetails] = useState();
   const [isPosteActive, setIsPosteActive] = useState(false);
-  useEffect(() => {
-    console.log("effet");
-  }, [posteOperator]);
+  const [isUniteActive, setIsUniteActive] = useState(false);
+  const [filter, setFilter] = useState(initialFilter);
 
-  const handleClick = (id) => {
+  const handleModal = (id) => {
     setIsModalActive(true);
-    setOperatorId(id - 1);
-    console.log(id - 1);
+    const findOperator = operators.find((op) => op.id === id);
+    setOperatorDetails(findOperator);
   };
+
+  const handleClick = (type, filterValue) => {
+    if (type === "poste" && filterValue === filter.poste) {
+      setFilter((prev) => ({ ...prev, [type]: "" }));
+    } else {
+      setFilter((prev) => ({ ...prev, [type]: filterValue }));
+    }
+  };
+
+  const filteredOperators = (filter) => {
+    if (!filter.poste && !filter.unite) {
+      return operators;
+    }
+
+    return operators.filter((operator) =>
+      Object.entries(filter).every(
+        ([key, value]) => !value || operator[key] === value
+      )
+    );
+  };
+
+  useEffect(() => {
+    const filteredData = filteredOperators(filter);
+    setData(filteredData);
+  }, [filter]);
 
   const closeModal = () => setIsModalActive(false);
 
-  const handlePoste = (newPoste) => {
-    if (!newPoste) return;
-    setIsPosteActive(!isPosteActive);
-
-    if (newPoste !== posteOperator) {
-      setPosteOperator(newPoste);
-      filteredOperators(newPoste); // setIsPosteActive(true)
-    } else {
-      setPosteOperator("");
-      filteredOperators(""); // setIsPosteActive(false)
-    }
-  };
-
-  const filteredOperators = (postefilter) => {
-    console.log("poste", postefilter);
-
-    if (!postefilter) {
-      setData(operators);
-    } else {
-      const filteredData = operators.filter(
-        (operator) => operator.poste === postefilter
-      );
-      setData(filteredData);
-    }
-  };
+  useEffect(() => {
+    const poste = filter.poste ? true : false;
+    setIsPosteActive(poste);
+    const unite = filter.unite ? true : false;
+    setIsUniteActive(unite);
+  }, [filter]);
 
   return (
     <>
@@ -61,12 +70,12 @@ export default function App() {
       </header>
       <main className="p-8 min-w-96">
         <Rank />
-        <Poste poste={handlePoste} isActive={isPosteActive} />
-        {/* <Unite /> */}
-        <OperatorsList data={data} handleClick={handleClick} />
+        <Poste handleClick={handleClick} isActive={isPosteActive} />
+        <Unite handleClick={handleClick} isActive={isUniteActive} />
+        <OperatorsList data={data} handleModal={handleModal} />
       </main>
       <Modal
-        operator={operators[operatorId]}
+        operatorData={operatorDetails}
         isModalActive={isModalActive}
         close={closeModal}
       />

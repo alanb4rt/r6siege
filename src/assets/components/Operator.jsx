@@ -1,10 +1,10 @@
-export default function Operator({ data, onClick }) {
+export default function Operator({ data, handleModal }) {
   const path = "./src/assets/images";
 
   return (
     <div
       key={data.id}
-      onClick={() => onClick(data.id)}
+      onClick={() => handleModal(data.id)}
       className="card flex flex-col cursor-pointer"
     >
       <section className="flex flex-col items-center text-center rounded overflow-hidden">

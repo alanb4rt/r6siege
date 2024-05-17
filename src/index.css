@@ -56,7 +56,7 @@ h1 {
 }
 
 #unite .button {
-  @apply border p-2
+  @apply cursor-pointer border p-2
 }
 
 .card .bio > li {
