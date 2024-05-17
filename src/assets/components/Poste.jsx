@@ -1,7 +1,17 @@
+import { useEffect, useState } from "react";
+
 export const Button = (props) => {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    setIsActive(!props.filter ? false : true);
+  }, [props.filter]);
+
   return (
     <li
-      className={`button-poste ${props.isActive ? "opacity-50" : ""}`}
+      className={`button-poste ${
+        isActive && props.poste !== props.filter && "opacity-50"
+      }`}
       onClick={() => props.handleClick("poste", props.poste)}
     >
       <img className="w-full h-auto" src={props.src} alt={props.title} />
@@ -10,7 +20,7 @@ export const Button = (props) => {
   );
 };
 
-export default function Poste({ handleClick, isActive }) {
+export default function Poste({ filter, handleClick }) {
   const pathSrc = "./src/assets/images";
 
   return (
@@ -18,14 +28,14 @@ export default function Poste({ handleClick, isActive }) {
       <h2>Poste</h2>
       <ul className="flex justify-center gap-4">
         <Button
-          isActive={isActive}
+          filter={filter}
           poste="att"
           src={`${pathSrc}/att.png`}
           title="Assaillant"
           handleClick={handleClick}
         />
         <Button
-          isActive={isActive}
+          filter={filter}
           poste="def"
           src={`${pathSrc}/def.png`}
           title="Défenseur"
