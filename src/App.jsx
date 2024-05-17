@@ -15,7 +15,6 @@ export default function App() {
   const [data, setData] = useState(operators);
   const [isModalActive, setIsModalActive] = useState(false);
   const [operatorDetails, setOperatorDetails] = useState();
-  const [isUniteActive, setIsUniteActive] = useState(false);
   const [filter, setFilter] = useState(initialFilter);
 
   const handleModal = (id) => {
@@ -51,11 +50,6 @@ export default function App() {
 
   const closeModal = () => setIsModalActive(false);
 
-  useEffect(() => {
-    const unite = filter.unite ? true : false;
-    setIsUniteActive(unite);
-  }, [filter]);
-
   return (
     <>
       <header>
@@ -68,7 +62,7 @@ export default function App() {
       <main className="p-8 min-w-96">
         <Rank />
         <Poste handleClick={handleClick} filter={filter.poste} />
-        <Unite handleClick={handleClick} isActive={isUniteActive} />
+        <Unite handleClick={handleClick} filter={filter.unite} />
         <OperatorsList data={data} handleModal={handleModal} />
       </main>
       <Modal
