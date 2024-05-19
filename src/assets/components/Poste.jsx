@@ -24,7 +24,7 @@ export default function Poste({ filter, handleClick }) {
   const pathSrc = "./src/assets/images";
 
   return (
-    <section id="poste" className="flex flex-col text-center gap-4">
+    <section id="poste" className="text-center py-4">
       <h2>Poste</h2>
       <ul className="flex justify-center gap-4">
         <Button

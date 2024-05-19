@@ -59,11 +59,13 @@ export default function App() {
           Les opérateurs
         </h1>
       </header>
-      <main className="p-8 min-w-96">
+      <main className="ctn">
         <Rank />
         <Poste handleClick={handleClick} filter={filter.poste} />
-        <Unite handleClick={handleClick} filter={filter.unite} />
-        <OperatorsList data={data} handleModal={handleModal} />
+        <section className="flex gap-8 py-4">
+          <Unite handleClick={handleClick} filter={filter.unite} />
+          <OperatorsList data={data} handleModal={handleModal} />
+        </section>
       </main>
       <Modal
         operatorData={operatorDetails}

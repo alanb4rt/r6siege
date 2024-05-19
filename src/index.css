@@ -24,6 +24,10 @@ html {
 
 }
 
+.ctn {
+  @apply max-w-7xl mx-auto px-8;
+}
+
 header {
   background-image: url('./assets/images/bg-header.jpg');
   background-position: center;
@@ -46,6 +50,9 @@ h1 {
   text-shadow: 0px 0px 5px black;
 }
 
+h2 {
+  @apply text-xl mb-4
+}
 
 #grade img {
   width: 100px;
@@ -56,13 +63,17 @@ h1 {
 }
 
 #unite .button {
-  @apply cursor-pointer border p-2
+  @apply cursor-pointer border rounded p-2;
+}
+
+#operators {
+  grid-template-columns: repeat(auto-fill, minmax(160px, auto));
 }
 
 .card .bio > li {
   color: white;
-    border-bottom: 1px solid white;
-    padding: 10px;
+  border-bottom: 1px solid white;
+  padding: 10px;
 }
 
 .card .bio > li:last-child {
