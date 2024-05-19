@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Rank from "./assets/components/Rank";
 import Poste from "./assets/components/Poste";
 import Unite from "./assets/components/Unite";
 import OperatorsList from "./assets/components/OperatorsList";
@@ -60,7 +59,6 @@ export default function App() {
         </h1>
       </header>
       <main className="ctn">
-        <Rank />
         <Poste handleClick={handleClick} filter={filter.poste} />
         <section className="flex gap-8 py-4">
           <Unite handleClick={handleClick} filter={filter.unite} />
