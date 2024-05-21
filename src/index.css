@@ -25,7 +25,7 @@ html {
 }
 
 .ctn {
-  @apply max-w-7xl mx-auto px-8;
+  @apply max-w-7xl mx-auto p-8;
 }
 
 header {
@@ -37,7 +37,10 @@ header {
   place-content: center;
   text-align: center;
   padding: 2rem;
-  margin-bottom: 2rem;
+}
+
+main {
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

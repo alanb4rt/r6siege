@@ -12,29 +12,31 @@ export default function Unite(props) {
   }, [filter]);
 
   return (
-    <section id="unite" className="sticky top-8 w-1/5 max-w-xs">
-      <h2>Unités</h2>
-      <ul className="flex flex-col gap-2">
-        <li
-          className={`button uppercase ${
-            isActive && filter ? "opacity-50" : ""
-          }`}
-          onClick={() => handleClick("unite", "")}
-        >
-          TOUS
-        </li>
-        {uniqueUnites.map((unite) => (
+    <section id="unite" className=" w-1/5 max-w-xs">
+      <div className="sticky top-12">
+        <h2>Unités</h2>
+        <ul className="flex flex-col gap-2">
           <li
-            key={unite}
             className={`button uppercase ${
-              isActive && filter !== unite ? "opacity-50" : ""
+              isActive && filter ? "opacity-50" : ""
             }`}
-            onClick={() => handleClick("unite", unite)}
+            onClick={() => handleClick("unite", "")}
           >
-            {unite}
+            TOUS
           </li>
-        ))}
-      </ul>
+          {uniqueUnites.map((unite) => (
+            <li
+              key={unite}
+              className={`button uppercase ${
+                isActive && filter !== unite ? "opacity-50" : ""
+              }`}
+              onClick={() => handleClick("unite", unite)}
+            >
+              {unite}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
