@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+
+}
 
 * {
   box-sizing: border-box;
@@ -18,10 +21,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-:root {
-
+  scroll-behavior: smooth;
 }
 
 .ctn {
@@ -108,4 +108,8 @@ h2 {
 
 .ctn-modal span {
   @apply text-lg;
+}
+
+footer {
+  background-color: hsla(0, 0%, 10%, 1);
 }

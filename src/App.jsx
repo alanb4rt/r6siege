@@ -58,11 +58,14 @@ export default function App() {
           Les opérateurs
         </h1>
       </header>
-      <main className="ctn">
+      <main id="content" className="ctn">
         <Poste handleClick={handleClick} filter={filter.poste} />
         <section className="flex gap-8 py-4">
           <Unite handleClick={handleClick} filter={filter.unite} />
           <OperatorsList data={data} handleModal={handleModal} />
+        </section>
+        <section className="w-full text-right">
+          <a href="#content">Retour haut de page</a>
         </section>
       </main>
       <Modal
@@ -70,6 +73,9 @@ export default function App() {
         isModalActive={isModalActive}
         close={closeModal}
       />
+      <footer className="flex justify-center p-4">
+        <p>© 2024 - Alan Bart</p>
+      </footer>
     </>
   );
 }
