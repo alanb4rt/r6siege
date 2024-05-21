@@ -2,11 +2,7 @@ export default function Operator({ data, handleModal }) {
   const path = "./src/assets/images";
 
   return (
-    <div
-      key={data.id}
-      onClick={() => handleModal(data.id)}
-      className="card flex flex-col cursor-pointer hover:scale-110 transition-all"
-    >
+    <div key={data.id} onClick={() => handleModal(data.id)} className="card">
       <div className="relative flex flex-col items-center">
         <img src={`${path}/operators/${data.img}`} alt={data.agent} />
         <img

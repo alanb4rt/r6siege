@@ -74,6 +74,10 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(160px, auto));
 }
 
+.card {
+  @apply w-40 flex flex-col cursor-pointer hover:scale-110 transition-all;
+}
+
 .card .bio > li {
   color: white;
   border-bottom: 1px solid white;
