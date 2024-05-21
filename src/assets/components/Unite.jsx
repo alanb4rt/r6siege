@@ -12,10 +12,10 @@ export default function Unite(props) {
   }, [filter]);
 
   return (
-    <section id="unite" className=" w-1/5 max-w-xs">
+    <section id="unite" className=" w-1/5 max-w-xs max-lg:w-full">
       <div className="sticky top-12">
-        <h2>Unités</h2>
-        <ul className="flex flex-col gap-2">
+        <h2 className="max-lg:text-center">Unités</h2>
+        <ul className="flex flex-col gap-2 max-lg:flex-row max-lg:overflow-x-scroll max-lg:pb-1">
           <li
             className={`button uppercase ${
               isActive && filter ? "opacity-50" : ""

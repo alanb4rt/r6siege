@@ -60,7 +60,7 @@ export default function App() {
       </header>
       <main id="content" className="ctn">
         <Poste handleClick={handleClick} filter={filter.poste} />
-        <section className="flex gap-8 py-4">
+        <section className="flex gap-8 py-4 max-lg:flex-col">
           <Unite handleClick={handleClick} filter={filter.unite} />
           <OperatorsList data={data} handleModal={handleModal} />
         </section>
