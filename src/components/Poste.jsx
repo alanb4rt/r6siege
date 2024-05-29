@@ -21,7 +21,7 @@ export const Button = (props) => {
 };
 
 export default function Poste({ filter, handleClick }) {
-  const pathSrc = "./src/assets/images";
+  const pathSrc = "./src/assets/images/postes";
 
   return (
     <section id="poste" className="text-center py-4">

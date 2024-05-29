@@ -1,4 +1,4 @@
-import iconClose from "../assets/images/icon-close.svg";
+import iconClose from "../assets/icons/icon-close.svg";
 
 export default function Modal({ operatorData, isModalActive, close }) {
   const path = "./src/assets/images";
