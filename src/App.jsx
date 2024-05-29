@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Poste from "./assets/components/Poste";
-import Unite from "./assets/components/Unite";
-import OperatorsList from "./assets/components/OperatorsList";
-import Modal from "./assets/components/Modal";
-import { operators } from "./assets/utils/r6s_data";
+import Poste from "./components/Poste";
+import Unite from "./components/Unite";
+import OperatorsList from "./components/OperatorsList";
+import Modal from "./components/Modal";
+import { operators } from "./utils/r6s_data";
 
 export default function App() {
   const initialFilter = {
