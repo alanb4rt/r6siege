@@ -21,8 +21,6 @@ export const Button = (props) => {
 };
 
 export default function Poste({ filter, handleClick }) {
-  const pathSrc = "./src/assets/images/postes";
-
   return (
     <section id="poste" className="text-center py-4">
       <h2>Poste</h2>
@@ -30,14 +28,14 @@ export default function Poste({ filter, handleClick }) {
         <Button
           filter={filter}
           poste="att"
-          src={`${pathSrc}/att.png`}
+          src="./src/assets/images/postes/att.png"
           title="Assaillant"
           handleClick={handleClick}
         />
         <Button
           filter={filter}
           poste="def"
-          src={`${pathSrc}/def.png`}
+          src="./src/assets/images/postes/def.png"
           title="Défenseur"
           handleClick={handleClick}
         />
