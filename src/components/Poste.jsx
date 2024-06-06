@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getImageUrl } from "../utils/imageUrl";
 
 export const Button = (props) => {
   const [isActive, setIsActive] = useState(false);
@@ -21,8 +22,6 @@ export const Button = (props) => {
 };
 
 export default function Poste({ filter, handleClick }) {
-  const pathSrc = "./src/assets/images/postes";
-
   return (
     <section id="poste" className="text-center py-4">
       <h2>Poste</h2>
@@ -30,14 +29,14 @@ export default function Poste({ filter, handleClick }) {
         <Button
           filter={filter}
           poste="att"
-          src={`${pathSrc}/att.png`}
+          src={getImageUrl("postes/att.png")}
           title="Assaillant"
           handleClick={handleClick}
         />
         <Button
           filter={filter}
           poste="def"
-          src={`${pathSrc}/def.png`}
+          src={getImageUrl("postes/def.png")}
           title="Défenseur"
           handleClick={handleClick}
         />
