@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
-import { operators } from "../utils/r6s_data";
+import Operators from "../data/operators.json";
+import { FilterProps } from "../types/filter";
 
-export default function Unite(props) {
-  const { handleClick, filter } = props;
-  const uniqueUnites = [...new Set(operators.map((op) => op.unite))];
-
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    setIsActive(!filter ? false : true);
-  }, [filter]);
+export default function Unite({ filter, handleClick }: FilterProps) {
+  const uniqueUnites = [...new Set(Operators.map((op) => op.unite))];
 
   return (
     <section id="unite" className=" w-1/5 max-w-xs max-lg:w-full">
@@ -17,9 +10,7 @@ export default function Unite(props) {
         <h2 className="max-lg:text-center">Unités</h2>
         <ul className="flex flex-col gap-2 max-lg:flex-row max-lg:overflow-x-scroll max-lg:pb-1">
           <li
-            className={`button uppercase ${
-              isActive && filter ? "opacity-50" : ""
-            }`}
+            className={`button uppercase ${filter === "" ? "" : "opacity-50"}`}
             onClick={() => handleClick("unite", "")}
           >
             TOUS
@@ -27,9 +18,7 @@ export default function Unite(props) {
           {uniqueUnites.map((unite) => (
             <li
               key={unite}
-              className={`button uppercase ${
-                isActive && filter !== unite ? "opacity-50" : ""
-              }`}
+              className={`button uppercase ${filter && filter !== unite ? "opacity-50" : ""}`}
               onClick={() => handleClick("unite", unite)}
             >
               {unite}
