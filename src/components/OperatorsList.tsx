@@ -1,6 +1,12 @@
+import { OperatorType } from "../types/operator";
 import Operator from "./Operator";
 
-export default function OperatorsList({ data, handleModal }) {
+interface OperatorListProps {
+  data: OperatorType[],
+  handleModal: (id: OperatorType["id"]) => void
+}
+
+export default function OperatorsList({ data, handleModal }: OperatorListProps) {
   return (
     <section
       id="operators"
